@@ -6,12 +6,14 @@ class BTNode:
   '''Binary Tree Node.'''
   def __init__(self,item=None,l=None,r=None):
     self.data=item
-    self.left=None
-    self.right=None
+    self.left=l
+    self.right=r
   def setLeft(self,l):
     self.left=l
   def setRight(self,r):
     self.right=r
+  def isLeaf(self):
+    return self.left==self.right==None
 
 class BTree:
   '''Binary Tree.'''

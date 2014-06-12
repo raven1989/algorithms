@@ -18,4 +18,5 @@ def oddMan(a):
 if(__name__=='__main__'):
   a=(4,2,1,6,3,4,2,2,1,3,3,6,3)
   print a
+  print 'the one appears odd times:'
   print oddMan(a)
