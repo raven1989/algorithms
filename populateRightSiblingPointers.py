@@ -1,22 +1,10 @@
 #!/usr/bin/python
+import tree
 
-class BTNode:
-  '''Binary Tree Node.'''
-  def __init__(self,item=None,l=None,r=None):
-    self.data=item
-    self.left=l
-    self.right=r
-  def setLeft(self,l):
-    self.left=l
-  def setRight(self,r):
-    self.right=r
-  def isLeaf(self):
-    return self.left==self.right==None
-
-class BTNode_RS(BTNode):
+class BTNode_RS(tree.BTNode):
   '''Binary Tree Node with Right Sibling pointer.'''
   def __init__(self,item=None,l=None,r=None,rs=None):
-    BTNode.__init__(self,item,l,r)
+    tree.BTNode.__init__(self,item,l,r)
     self.rSibling=rs
 
 class BTree_RS:
