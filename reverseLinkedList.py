@@ -16,11 +16,11 @@ def reverseLL_I(l):
     l.head.link=pre
   return l
 
-def reverseLL_R_helper(h): #in c++, a ListNode*& h serves as parameter
-  if(h.link!=None):  #so that list's head could be changed as well.
-    cur=h          #However, here does not work this way.
-    h=h.link
-    reverseLL_R_helper(h)
+def reverseLL_R_helper(l): #in c++, a ListNode*& serves as a parameter so
+  if(l.head.link!=None):#that list's head could be changed simultaneously.
+    cur=l.head  #However,in python,in order to achieve this, 
+    l.head=l.head.link #the list itself has to be passed in as a parameter
+    reverseLL_R_helper(l) #so that the list.head can be changed.
     cur.link.link=cur
     cur.link=None
 
@@ -28,7 +28,7 @@ def reverseLL_R(l):
   '''Reverse a linked list recursively.'''
   if(l==None or l.head==None):
     return l
-  reverseLL_R_helper(l.head)
+  reverseLL_R_helper(l)
   return l
 
 if(__name__=='__main__'):
