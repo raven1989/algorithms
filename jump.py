@@ -15,15 +15,19 @@ def jump(stairs):
       poineer = cur
     if i >= poineer:
       break
-  if poineer < length-1:
-    return False
-  return True
+    elif poineer >= length-1:
+      return True
+#  if poineer < length-1:
+#    return False
+  return False
 
 if __name__ == '__main__':
-  s = [3,1,1,1,0,2]
+  s = [3,1,1,0,2]
   print s,jump(s)
   s = [3,1,1,1,0]
   print s,jump(s)
   s = [4,2,3,1,0,2]
+  print s,jump(s)
+  s = [4,3,2,1,0,2]
   print s,jump(s)
 
