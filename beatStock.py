@@ -4,16 +4,17 @@ def beatStock(stock):
   n=len(stock)
   buy=0
   sell=0
+  minimum=0
   max_dif=stock[sell]-stock[buy]
-  for i in range(n):
+  for i in xrange(0,n):
     if(stock[buy]>stock[i]):
-      buy=i
-    elif(stock[i]-stock[buy]>max_dif):
-      max_dif=stock[i]-stock[buy]
+      minimum=i
+    diff=stock[i]-stock[buy]
+    if(diff>max_dif):
+      max_dif=diff
+      buy=minimum
       sell=i
-    else:
-      continue
-  return (buy,sell)
+  return (buy+1,sell+1)
 
 s=[2,3,1,3,7,5,4]
 time=beatStock(s)
